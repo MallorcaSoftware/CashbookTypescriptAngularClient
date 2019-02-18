@@ -16,7 +16,7 @@ import { HttpClient, HttpHeaders, HttpParams,
          HttpResponse, HttpEvent }                           from '@angular/common/http';
 import { CustomHttpUrlEncodingCodec }                        from '../encoder';
 
-import { Observable }                                        from 'rxjs/Observable';
+import { Observable }                                        from 'rxjs';
 
 import { CashbookDto } from '../model/cashbookDto';
 import { CashbookEntryDto } from '../model/cashbookEntryDto';
@@ -25,7 +25,9 @@ import { BASE_PATH, COLLECTION_FORMATS }                     from '../variables'
 import { Configuration }                                     from '../configuration';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class CashbookEntryControllerService {
 
     protected basePath = 'http://cashbook.api.mallorca-software.com';

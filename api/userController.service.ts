@@ -16,7 +16,7 @@ import { HttpClient, HttpHeaders, HttpParams,
          HttpResponse, HttpEvent }                           from '@angular/common/http';
 import { CustomHttpUrlEncodingCodec }                        from '../encoder';
 
-import { Observable }                                        from 'rxjs/Observable';
+import { Observable }                                        from 'rxjs';
 
 import { ResponseEntity } from '../model/responseEntity';
 import { UserChangePasswordDto } from '../model/userChangePasswordDto';
@@ -28,7 +28,9 @@ import { BASE_PATH, COLLECTION_FORMATS }                     from '../variables'
 import { Configuration }                                     from '../configuration';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class UserControllerService {
 
     protected basePath = 'http://cashbook.api.mallorca-software.com';
